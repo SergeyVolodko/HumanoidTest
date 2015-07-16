@@ -29,8 +29,8 @@ public class MainCamera : MonoBehaviour
 
     private float CalculateCameraSize(float distanceBetweenFighters)
     {
-        float minSize = 2f;
-        float maxSize = 7f;
+        float minSize = 3f;
+        float maxSize = 10;
         float distanceMargin = 0.5f;
 
         var size = 0.5f * distanceBetweenFighters + distanceMargin;
