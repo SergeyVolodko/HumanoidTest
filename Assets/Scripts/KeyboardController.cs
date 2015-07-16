@@ -1,26 +1,46 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class KeyboardController : MonoBehaviour
 {
-    public float ForceValue = 65f;
-    public float Gravity = 0.75f;
+    public float ForceValue = 75f;
+    public float Gravity = 0.85f;
+    public Button jump;
+    public Joystick joystick;
+    private RectTransform t;
+    private Rigidbody rb;
 
     void Start()
     {
         Physics.gravity = new Vector3(0, -Gravity, 0);
+        jump.onClick.AddListener(Jump);
+        rb = this.gameObject.GetComponent<Rigidbody>();
+
+#if !UNITY_EDITOR
+        joystick.transform.parent.gameObject.SetActive(true);
+#endif
     }
 
-    void Update ()
-	{
-	    var direction = GetDirection();
+    private void Jump()
+    {
+        var direction = GetDirection();
 
-	    var rb = this.gameObject.GetComponent<Rigidbody>();
-        rb.AddForce(direction * ForceValue);
+        if (direction != Vector3.zero)
+        {
+            rb.AddForce(direction * ForceValue);
+        }
     }
 
-    private static Vector3 GetDirection()
+    void Update()
+    {
+        Jump();
+    }
+
+    private Vector3 GetDirection()
     {
         var direction = Vector3.zero;
+#if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             direction = Vector3.up;
@@ -38,5 +58,15 @@ public class KeyboardController : MonoBehaviour
             direction = Vector3.right;
         }
         return direction;
+#else
+        if (t == null)
+        {
+            t = joystick.GetComponent<RectTransform>();
+        }
+        return new Vector3(t.anchoredPosition.x / 100f, t.anchoredPosition.y / 100f, 0);
+#endif
+
+
+
     }
 }

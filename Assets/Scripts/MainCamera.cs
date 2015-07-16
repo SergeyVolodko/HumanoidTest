@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 
-public class MainCamera : MonoBehaviour {
+public class MainCamera : MonoBehaviour
+{
 
     public Transform Fighter1;
     public Transform Fighter2;
-        
+
+    private Transform camera;
 
     void Start()
     {
+        camera = Camera.main.transform;
     }
 
     void Update()
@@ -17,21 +20,21 @@ public class MainCamera : MonoBehaviour {
         var middlePoint = Fighter1.position + 0.5f * vectorBetweenFighters;
 
         var distance = vectorBetweenFighters.magnitude;
-        
+
         Camera.main.orthographicSize = CalculateCameraSize(distance);
-        Camera.main.transform.position = new Vector3(middlePoint.x, 
+        camera.position = new Vector3(middlePoint.x,
                                                      middlePoint.y,
                                                      Camera.main.transform.position.z);
     }
 
     private float CalculateCameraSize(float distanceBetweenFighters)
     {
-        float minSize = 0.5f;
-        float maxSize = 5f;
+        float minSize = 2f;
+        float maxSize = 7f;
         float distanceMargin = 0.5f;
 
-        var size = 0.5f*distanceBetweenFighters + distanceMargin;
-        
+        var size = 0.5f * distanceBetweenFighters + distanceMargin;
+
         if (size < minSize)
         {
             size = minSize;
