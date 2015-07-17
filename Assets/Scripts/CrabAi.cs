@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.Assertions.Must;
 
 public class CrabAi : MonoBehaviour {
 
@@ -38,18 +36,18 @@ public class CrabAi : MonoBehaviour {
 	    }
 	    else
 	    {
-	        t++;
-            SuddenJump(directionToPlayer);
+            RandomJump(directionToPlayer);
+            t++;
 	    }
 	}
 
-    private void SuddenJump(Vector3 directionToPlayer)
+    private void RandomJump(Vector3 directionToPlayer)
     {
-        var bingo = random.Next(0, 1200);
+        var bingo = random.Next(0, 1500);
         
         if (bingo == 1000)
-            rb.AddForce(Vector3.up * 500f);
+            rb.AddForce(Vector3.up * 300f);
         else if (bingo == 1200)
-            rb.AddForce(directionToPlayer * 500f);
+            rb.AddForce(directionToPlayer * 300f);
     }
 }

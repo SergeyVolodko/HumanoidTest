@@ -201,9 +201,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!4 &385375667 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 494700, guid: 02e904c3cfa83e943b5752a3860f187a, type: 2}
+  m_PrefabInternal: {fileID: 357627837}
 --- !u!1 &769109994 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 198190, guid: 7fc65a5ee45bd014abe1e88a041732a8, type: 2}
+  m_PrefabInternal: {fileID: 1947198434}
+--- !u!4 &769109998 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 447892, guid: 7fc65a5ee45bd014abe1e88a041732a8, type: 2}
   m_PrefabInternal: {fileID: 1947198434}
 --- !u!114 &769110000
 MonoBehaviour:
@@ -308,6 +316,7 @@ GameObject:
   - 92: {fileID: 1141687892}
   - 124: {fileID: 1141687891}
   - 81: {fileID: 1141687890}
+  - 114: {fileID: 1141687895}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -381,6 +390,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &1141687895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1141687889}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5646742df8aa8444cb618c41ff351598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Fighter1: {fileID: 385375667}
+  Fighter2: {fileID: 769109998}
 --- !u!1001 &1947198434
 Prefab:
   m_ObjectHideFlags: 0
