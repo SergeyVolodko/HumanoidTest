@@ -128,7 +128,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11430542, guid: 02e904c3cfa83e943b5752a3860f187a, type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11430542, guid: 02e904c3cfa83e943b5752a3860f187a, type: 2}
       propertyPath: ForceValue
@@ -201,6 +201,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!1 &769109994 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 198190, guid: 7fc65a5ee45bd014abe1e88a041732a8, type: 2}
+  m_PrefabInternal: {fileID: 1947198434}
+--- !u!114 &769110000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 769109994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed028fd07a87df8479f936f6d96e2012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1133997436}
+  distanceLimit: 2
+  period: 100
 --- !u!1 &801279702
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,6 +292,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!4 &1133997436 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 405946, guid: 02e904c3cfa83e943b5752a3860f187a, type: 2}
+  m_PrefabInternal: {fileID: 357627837}
 --- !u!1 &1141687889
 GameObject:
   m_ObjectHideFlags: 0
