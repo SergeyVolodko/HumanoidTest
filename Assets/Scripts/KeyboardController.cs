@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.CrossPlatformInput;
 
@@ -14,10 +15,13 @@ public class KeyboardController : MonoBehaviour
     void Start()
     {
         Physics.gravity = new Vector3(0, -Gravity, 0);
-        jump.onClick.AddListener(Jump);
         rb = this.gameObject.GetComponent<Rigidbody>();
 
+        if(jump != null)
+            jump.onClick.AddListener(Jump);
+
 #if !UNITY_EDITOR
+        
         joystick.transform.parent.gameObject.SetActive(true);
 #endif
     }

@@ -23,14 +23,14 @@ public class MainCamera : MonoBehaviour
 
         Camera.main.orthographicSize = CalculateCameraSize(distance);
         camera.position = new Vector3(middlePoint.x,
-                                                     middlePoint.y,
-                                                     Camera.main.transform.position.z);
+                                      middlePoint.y,
+                                      Camera.main.transform.position.z);
     }
 
     private float CalculateCameraSize(float distanceBetweenFighters)
     {
         float minSize = 3f;
-        float maxSize = 10;
+        float maxSize = 10f;
         float distanceMargin = 0.5f;
 
         var size = 0.5f * distanceBetweenFighters + distanceMargin;
