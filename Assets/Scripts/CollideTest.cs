@@ -9,7 +9,6 @@ public class CollideTest : MonoBehaviour
         if (col.gameObject.tag == "damage")
         {
             var forceVector = (-transform.position + col.transform.position).normalized * force;
-            Debug.Log("damage " + forceVector);
 
             col.gameObject.GetComponent<Rigidbody>().AddForce(forceVector, ForceMode.Impulse);
             gameObject.GetComponent<Rigidbody>().AddForce(-forceVector / 2f, ForceMode.Impulse);
@@ -24,10 +23,8 @@ public class CollideTest : MonoBehaviour
         else if (col.gameObject.tag == "hit")
         {
             var forceVector = (-transform.position + col.transform.position).normalized * force;
-            Debug.Log("hit " + forceVector);
 
             col.gameObject.GetComponent<Rigidbody>().AddForce(forceVector / 2f, ForceMode.Impulse);
-            //gameObject.GetComponent<Rigidbody>().AddForce(-forceVector / 2f, ForceMode.Impulse);
 
             StopCoroutine("TimeScale");
             StartCoroutine("TimeScale");
@@ -45,7 +42,6 @@ public class CollideTest : MonoBehaviour
         yield return null;
         while (Time.unscaledTime - startTime < duration)
         {
-            //Time.timeScale = Mathf.Lerp(0.3f, 1f, (Time.unscaledTime - startTime)/duration);
             yield return null;
         }
         Time.timeScale = 1f;

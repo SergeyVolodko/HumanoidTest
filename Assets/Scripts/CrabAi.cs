@@ -7,7 +7,7 @@ public class CrabAi : MonoBehaviour {
 
     public float distanceLimit = 3.5f;
     public float period = 75f;
-    private float forceValue = 100f;
+    public float forceValue = 100f;
     private float t = 0.0f;
     private System.Random random;
 

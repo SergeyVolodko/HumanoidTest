@@ -39,6 +39,11 @@ public class KeyboardController : MonoBehaviour
     void Update()
     {
         Jump();
+
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            Application.LoadLevel("Crab");
+        }
     }
 
     private Vector3 GetDirection()
