@@ -14,7 +14,7 @@ GameObject:
   - 54: {fileID: 5413418}
   - 144: {fileID: 14456326}
   - 114: {fileID: 11410112}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: t-left-hip
   m_TagString: hit
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ GameObject:
   - 54: {fileID: 5446160}
   - 144: {fileID: 14423244}
   - 114: {fileID: 11447118}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: t-right-knee
   m_TagString: hit
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - 54: {fileID: 5440604}
   - 144: {fileID: 14465126}
   - 114: {fileID: 11464032}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: t-right-shoulder
   m_TagString: hit
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ GameObject:
   - 54: {fileID: 5408864}
   - 144: {fileID: 14407230}
   - 114: {fileID: 11402302}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: t-right-hip
   m_TagString: hit
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - 23: {fileID: 2372698}
   - 65: {fileID: 6525126}
   - 54: {fileID: 5423164}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: t-pelvis
   m_TagString: damage
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - 144: {fileID: 14479666}
   - 136: {fileID: 13664946}
   - 114: {fileID: 11432280}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: t-left-shoulder
   m_TagString: hit
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   - 54: {fileID: 5441878}
   - 144: {fileID: 14465924}
   - 114: {fileID: 11442212}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: t-left-arm
   m_TagString: hit
   m_Icon: {fileID: 0}
@@ -158,8 +158,7 @@ GameObject:
   - 65: {fileID: 6559532}
   - 54: {fileID: 5454482}
   - 144: {fileID: 14489722}
-  - 114: {fileID: 11468834}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: t-chest
   m_TagString: damage
   m_Icon: {fileID: 0}
@@ -179,9 +178,8 @@ GameObject:
   - 135: {fileID: 13568672}
   - 54: {fileID: 5460056}
   - 144: {fileID: 14483556}
-  - 114: {fileID: 11440432}
-  - 114: {fileID: 11466958}
-  m_Layer: 4
+  - 114: {fileID: 11495150}
+  m_Layer: 0
   m_Name: t-head
   m_TagString: damage
   m_Icon: {fileID: 0}
@@ -196,7 +194,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 481902}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +215,7 @@ GameObject:
   - 54: {fileID: 5413152}
   - 144: {fileID: 14464802}
   - 114: {fileID: 11464790}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: t-left-knee
   m_TagString: hit
   m_Icon: {fileID: 0}
@@ -238,7 +236,7 @@ GameObject:
   - 144: {fileID: 14465902}
   - 136: {fileID: 13698912}
   - 114: {fileID: 11478230}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: t-right-arm
   m_TagString: hit
   m_Icon: {fileID: 0}
@@ -348,7 +346,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 184188}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.82000017, y: 3.3900001, z: 0}
+  m_LocalPosition: {x: 4.5, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 430806}
@@ -941,7 +939,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f6256bfe7bd98479615d752cd7b446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTags: []
   force: 2
+  ownColliders: []
 --- !u!114 &11410112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -953,7 +953,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f6256bfe7bd98479615d752cd7b446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTags: []
   force: 2
+  ownColliders: []
 --- !u!114 &11432280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -965,22 +967,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f6256bfe7bd98479615d752cd7b446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTags: []
   force: 2
---- !u!114 &11440432
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 155254}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20a1305dc69da5841ba47e7e1c5c20e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ForceValue: 75
-  Gravity: .850000024
-  jump: {fileID: 0}
-  joystick: {fileID: 0}
+  ownColliders: []
 --- !u!114 &11442212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -992,7 +981,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f6256bfe7bd98479615d752cd7b446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTags: []
   force: 2
+  ownColliders: []
 --- !u!114 &11447118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1004,7 +995,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f6256bfe7bd98479615d752cd7b446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTags: []
   force: 2
+  ownColliders: []
 --- !u!114 &11464032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1016,7 +1009,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f6256bfe7bd98479615d752cd7b446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTags: []
   force: 2
+  ownColliders: []
 --- !u!114 &11464790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1028,37 +1023,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f6256bfe7bd98479615d752cd7b446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTags: []
   force: 2
---- !u!114 &11466958
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 155254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed028fd07a87df8479f936f6d96e2012, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  distanceLimit: .5
-  period: 50
-  forceValue: 15
---- !u!114 &11468834
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed028fd07a87df8479f936f6d96e2012, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  distanceLimit: .5
-  period: 50
-  forceValue: 15
+  ownColliders: []
 --- !u!114 &11478230
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1070,7 +1037,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f6256bfe7bd98479615d752cd7b446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTags: []
   force: 2
+  ownColliders: []
+--- !u!114 &11495150
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f2dd51bf3b93946b7a009290cadd4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  distanceLimit: .699999988
+  period: 150
+  forceValue: 80
 --- !u!135 &13568672
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1239,7 +1223,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: .899999976, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -1.53978658e-06, y: -.850000978, z: 0}
+  m_ConnectedAnchor: {x: -1.53978658e-06, y: -.850000381, z: 0}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1323,7 +1307,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: .899999976, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -1.63912773e-06, y: -.850000978, z: 0}
+  m_ConnectedAnchor: {x: 1.53978658e-06, y: -.850000381, z: 0}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1575,7 +1559,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: -1, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -4.76837158e-07, z: 0}
+  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:

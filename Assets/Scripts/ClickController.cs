@@ -23,7 +23,7 @@ public class ClickController : MonoBehaviour
 
         if (direction != Vector3.zero)
         {
-            rb.AddForce(direction * ForceValue);
+            rb.AddForce(direction * ForceValue, ForceMode.Force);
         }
     }
 

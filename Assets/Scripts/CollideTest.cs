@@ -1,40 +1,106 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 public class CollideTest : MonoBehaviour
 {
     public float force;
+
+    public Collider[] ownColliders;
+    private Rigidbody ownRig;
+    private Vector3 forceVector;
+    public Character controller;
+
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "damage")
+        if (ownColliders.Contains(col.collider))
         {
-            var forceVector = (-transform.position + col.transform.position).normalized * force;
-
-            col.gameObject.GetComponent<Rigidbody>().AddForce(forceVector, ForceMode.Impulse);
-            gameObject.GetComponent<Rigidbody>().AddForce(-forceVector / 2f, ForceMode.Impulse);
-
-            StopCoroutine("TimeScale");
-            StartCoroutine("TimeScale");
+            return;
         }
-        else if (col.gameObject.tag == "ground")
-        {
 
+        if (col.gameObject.tag == "ground")
+        {
+            return;
         }
-        else if (col.gameObject.tag == "hit")
+
+        if (ownRig == null)
         {
-            var forceVector = (-transform.position + col.transform.position).normalized * force;
+            ownRig = gameObject.GetComponent<Rigidbody>();
+        }
+        var target = col.gameObject.GetComponent<Rigidbody>();
 
-            col.gameObject.GetComponent<Rigidbody>().AddForce(forceVector / 2f, ForceMode.Impulse);
+        Debug.LogError(transform.parent.name + " " + col.relativeVelocity.normalized);
+        forceVector = col.relativeVelocity.normalized * force;
+        //forceVector.z = 0f;
+        ////force = 0f;
+        Debug.LogError(gameObject.tag + " " + col.gameObject.tag);
+        switch (gameObject.tag)
+        {
+            case "hit":
+                switch (col.gameObject.tag)
+                {
+                    case "hit":
+                        //StopCoroutine("TimeScale");
+                        //StartCoroutine("TimeScale");
+                        //force = Mathf.Abs(target.velocity.magnitude - ownRig.velocity.magnitude);
+                        //force = col.relativeVelocity.magnitude.x;
+                        //force = Mathf.Clamp(0f, 2f, force);
+                        //Debug.LogError(force + " " + forceVector);
 
-            StopCoroutine("TimeScale");
-            StartCoroutine("TimeScale");
+                        ownRig.AddForce(forceVector / 2f, ForceMode.Impulse);
+                        StopCoroutine("TimeScale");
+                        StartCoroutine("TimeScale", 0.5f);
+
+
+                        break;
+                    case "damage":
+                        //StopCoroutine("TimeScale");
+                        //StartCoroutine("TimeScale");
+                        //force = col.relativeVelocity.magnitude;
+                        //force = Mathf.Clamp(0f, 2f, force);
+                        //Debug.LogError(force + " " + forceVector);
+                        ownRig.AddForce(forceVector, ForceMode.Impulse);
+
+                        break;
+
+                }
+                break;
+            case "damage":
+                switch (col.gameObject.tag)
+                {
+                    case "hit":
+                        ownRig.AddForce(forceVector, ForceMode.Impulse);
+                        StopCoroutine("TimeScale");
+                        StartCoroutine("TimeScale", 1f);
+                        controller.Hit();
+
+                        var particle = Resources.Load("Particle");
+                        Instantiate(particle, col.contacts[0].point, Quaternion.identity);
+                        break;
+                    case "damage":
+                        ownRig.AddForce(forceVector, ForceMode.Impulse);
+                        StopCoroutine("TimeScale");
+                        StartCoroutine("TimeScale", 1f);
+                        var particle1 = Resources.Load("Particle");
+                        Instantiate(particle1, col.contacts[0].point, Quaternion.identity);
+                        controller.Hit();
+                        break;
+
+                }
+                break;
+
         }
 
     }
 
-    private IEnumerator TimeScale()
+    private void OnDrawGizmos()
     {
-        var duration = 0.5f;
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + forceVector);
+    }
+
+    private IEnumerator TimeScale(float duration)
+    {
 
         var startTime = Time.unscaledTime;
 

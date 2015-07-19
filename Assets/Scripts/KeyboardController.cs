@@ -36,7 +36,7 @@ public class KeyboardController : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Jump();
 
