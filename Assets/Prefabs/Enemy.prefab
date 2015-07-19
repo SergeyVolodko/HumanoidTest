@@ -96,6 +96,7 @@ GameObject:
   - 23: {fileID: 2372698}
   - 65: {fileID: 6525126}
   - 54: {fileID: 5423164}
+  - 114: {fileID: 11428934}
   m_Layer: 0
   m_Name: t-pelvis
   m_TagString: damage
@@ -158,6 +159,7 @@ GameObject:
   - 65: {fileID: 6559532}
   - 54: {fileID: 5454482}
   - 144: {fileID: 14489722}
+  - 114: {fileID: 11419998}
   m_Layer: 0
   m_Name: t-chest
   m_TagString: damage
@@ -179,6 +181,7 @@ GameObject:
   - 54: {fileID: 5460056}
   - 144: {fileID: 14483556}
   - 114: {fileID: 11495150}
+  - 114: {fileID: 11412658}
   m_Layer: 0
   m_Name: t-head
   m_TagString: damage
@@ -194,6 +197,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 481902}
+  - 114: {fileID: 11444054}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -939,9 +943,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f6256bfe7bd98479615d752cd7b446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTags: []
   force: 2
   ownColliders: []
+  controller: {fileID: 0}
 --- !u!114 &11410112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -953,9 +957,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f6256bfe7bd98479615d752cd7b446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTags: []
   force: 2
   ownColliders: []
+  controller: {fileID: 0}
+--- !u!114 &11412658
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5f6256bfe7bd98479615d752cd7b446, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
+  ownColliders: []
+  controller: {fileID: 0}
+--- !u!114 &11419998
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5f6256bfe7bd98479615d752cd7b446, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
+  ownColliders: []
+  controller: {fileID: 0}
+--- !u!114 &11428934
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5f6256bfe7bd98479615d752cd7b446, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
+  ownColliders: []
+  controller: {fileID: 0}
 --- !u!114 &11432280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -967,9 +1013,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f6256bfe7bd98479615d752cd7b446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTags: []
   force: 2
   ownColliders: []
+  controller: {fileID: 0}
 --- !u!114 &11442212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -981,9 +1027,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f6256bfe7bd98479615d752cd7b446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTags: []
   force: 2
   ownColliders: []
+  controller: {fileID: 0}
+--- !u!114 &11444054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c3082c7b0790554fa4599a415efdf90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownColliders: []
+  winHitCount: 10
+  hit: 0
 --- !u!114 &11447118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -995,9 +1055,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f6256bfe7bd98479615d752cd7b446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTags: []
   force: 2
   ownColliders: []
+  controller: {fileID: 0}
 --- !u!114 &11464032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1009,9 +1069,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f6256bfe7bd98479615d752cd7b446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTags: []
   force: 2
   ownColliders: []
+  controller: {fileID: 0}
 --- !u!114 &11464790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1023,9 +1083,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f6256bfe7bd98479615d752cd7b446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTags: []
   force: 2
   ownColliders: []
+  controller: {fileID: 0}
 --- !u!114 &11478230
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1037,9 +1097,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f6256bfe7bd98479615d752cd7b446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTags: []
   force: 2
   ownColliders: []
+  controller: {fileID: 0}
 --- !u!114 &11495150
 MonoBehaviour:
   m_ObjectHideFlags: 1

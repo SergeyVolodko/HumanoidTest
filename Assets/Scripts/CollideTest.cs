@@ -28,39 +28,20 @@ public class CollideTest : MonoBehaviour
             ownRig = gameObject.GetComponent<Rigidbody>();
         }
         var target = col.gameObject.GetComponent<Rigidbody>();
-
-        Debug.LogError(transform.parent.name + " " + col.relativeVelocity.normalized);
         forceVector = col.relativeVelocity.normalized * force;
-        //forceVector.z = 0f;
-        ////force = 0f;
-        Debug.LogError(gameObject.tag + " " + col.gameObject.tag);
+
         switch (gameObject.tag)
         {
             case "hit":
                 switch (col.gameObject.tag)
                 {
                     case "hit":
-                        //StopCoroutine("TimeScale");
-                        //StartCoroutine("TimeScale");
-                        //force = Mathf.Abs(target.velocity.magnitude - ownRig.velocity.magnitude);
-                        //force = col.relativeVelocity.magnitude.x;
-                        //force = Mathf.Clamp(0f, 2f, force);
-                        //Debug.LogError(force + " " + forceVector);
-
                         ownRig.AddForce(forceVector / 2f, ForceMode.Impulse);
                         StopCoroutine("TimeScale");
                         StartCoroutine("TimeScale", 0.5f);
-
-
                         break;
                     case "damage":
-                        //StopCoroutine("TimeScale");
-                        //StartCoroutine("TimeScale");
-                        //force = col.relativeVelocity.magnitude;
-                        //force = Mathf.Clamp(0f, 2f, force);
-                        //Debug.LogError(force + " " + forceVector);
                         ownRig.AddForce(forceVector, ForceMode.Impulse);
-
                         break;
 
                 }
@@ -73,7 +54,6 @@ public class CollideTest : MonoBehaviour
                         StopCoroutine("TimeScale");
                         StartCoroutine("TimeScale", 1f);
                         controller.Hit();
-
                         var particle = Resources.Load("Particle");
                         Instantiate(particle, col.contacts[0].point, Quaternion.identity);
                         break;
