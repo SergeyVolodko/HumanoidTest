@@ -8,6 +8,9 @@ public class MainCamera : MonoBehaviour
 
     private Transform camera;
 
+    private float minSize = 3f;
+    private float maxSize = 10f;
+
     void Start()
     {
         camera = Camera.main.transform;
@@ -20,17 +23,47 @@ public class MainCamera : MonoBehaviour
         var middlePoint = Fighter1.position + 0.5f * vectorBetweenFighters;
 
         var distance = vectorBetweenFighters.magnitude;
-
+        
         Camera.main.orthographicSize = CalculateCameraSize(distance);
-        camera.position = new Vector3(middlePoint.x,
-                                      middlePoint.y,
+        camera.position = new Vector3(ApplyXLimits(middlePoint.x),
+                                      ApplyYLimits(middlePoint.y),
                                       Camera.main.transform.position.z);
+    }
+
+    private float ApplyXLimits(float x)
+    {
+        float leftLimit = -(maxSize - minSize - 1f);
+        if (x <= leftLimit)
+        {
+            return leftLimit;
+        }
+        float rightLimit = maxSize - minSize - 1f;
+        if (x >= rightLimit)
+        {
+            return rightLimit;
+        }
+
+        return x;
+    }
+
+    private float ApplyYLimits(float y)
+    {
+        float upLimit = maxSize - minSize + 1f;
+        if (y >= upLimit)
+        {
+            return upLimit;
+        }
+        float downLimit = minSize;
+        if (y <= downLimit)
+        {
+            return downLimit;
+        }
+
+        return y;
     }
 
     private float CalculateCameraSize(float distanceBetweenFighters)
     {
-        float minSize = 3f;
-        float maxSize = 10f;
         float distanceMargin = 0.5f;
 
         var size = 0.5f * distanceBetweenFighters + distanceMargin;
