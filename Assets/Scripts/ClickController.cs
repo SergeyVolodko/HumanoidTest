@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ClickController : MonoBehaviour
 {
-    public float ForceValue = 100f;
+    public float ForceValue = 200f;
     public float Gravity = 0.85f;
 
     private Rigidbody rb;
